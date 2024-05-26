@@ -11,7 +11,7 @@ data class ApiResponse<T> internal constructor(
         }
 
         fun error(message: String): ApiResponse<Unit> {
-            return ApiResponse(Unit, message, "error")
+            return ApiResponse(null, message, "error")
         }
 
         fun success(): ApiResponse<Unit> {

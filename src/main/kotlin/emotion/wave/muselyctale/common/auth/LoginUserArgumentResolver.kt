@@ -21,8 +21,11 @@ class LoginUserArgumentResolver(
         mavContainer: ModelAndViewContainer?,
         webRequest: NativeWebRequest,
         binderFactory: WebDataBinderFactory?,
-    ): Long? {
-        val emailHeader = webRequest.getHeader("user-email") ?: return null
+    ): Long {
+        val emailHeader =
+            webRequest.getHeader("user-email")
+                ?: throw IllegalArgumentException("user-email 헤더가 존재하지 않습니다.")
+
         val user =
             userService.findByEmail(emailHeader) ?: run {
                 userService.crete(emailHeader)
