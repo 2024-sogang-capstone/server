@@ -70,6 +70,6 @@ class ChatService(
     }
 
     private fun findSongByEmotion(emotion: Emotion): List<Song> {
-        return songRepository.findAllByEmotionId(emotion.id)
+        return songRepository.findAllByEmotionId(emotion.id).shuffled().take(3)
     }
 }
