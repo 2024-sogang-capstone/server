@@ -10,6 +10,8 @@ class ProductionAiApi(
     private val aiClient: AiClient,
 ) : AiApi {
     override fun analyzeEmotion(input: String): EmotionType {
-        return aiClient.analyzeEmotion(input)
+        return runCatching {
+            aiClient.analyzeEmotion(input)
+        }.getOrNull() ?: EmotionType.entries.random() // TODO : 제거
     }
 }
