@@ -13,4 +13,6 @@ class Song(
     val url: String,
     @Column(name = "artist")
     val artist: String,
+    @Column(name = "ref_emotion_id")
+    val emotionId: Long,
 ) : BaseEntity()

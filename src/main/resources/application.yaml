@@ -1,3 +1,19 @@
 spring:
   application:
     name: muselyctale
+feign:
+    client:
+        config:
+            ai:
+                connectTimeout: 2000
+                readTimeout: 5000
+                loggerLevel: full
+    compression:
+        response:
+            enabled: false
+            useGzipDecoder: false
+    httpclient:
+        maxConnections: 2000
+        maxConnectionsPerRoute: 2000
+ai:
+    url: fake-url
