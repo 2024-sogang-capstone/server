@@ -38,3 +38,6 @@ out/
 
 ### Kotlin ###
 .kotlin
+
+## Mac files ##
+.DS_Store
