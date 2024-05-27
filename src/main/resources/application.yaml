@@ -17,3 +17,4 @@ feign:
         maxConnectionsPerRoute: 2000
 ai:
     url: fake-url
+    secret-key: ${AI_SECRET_KEY}
