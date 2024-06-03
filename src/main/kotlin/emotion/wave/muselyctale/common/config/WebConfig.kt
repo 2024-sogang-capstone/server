@@ -12,7 +12,11 @@ class WebConfig(
 ) : WebMvcConfigurer {
     override fun addCorsMappings(registry: CorsRegistry) {
         registry.addMapping("/**")
-            .allowedOrigins("http://localhost:3000")
+            .allowedOrigins(
+                "http://localhost:3000",
+                "http://ec2-43-200-182-138.ap-northeast-2.compute.amazonaws.com",
+                "http://ec2-43-200-182-138.ap-northeast-2.compute.amazonaws.com:3000",
+            )
             .allowedMethods("*")
             .allowedHeaders("*")
             .allowCredentials(true)
